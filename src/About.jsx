@@ -1,5 +1,23 @@
 import React from "react";
 
+const links = [
+  {
+    href: "https://enka.network/hsr/800735792/",
+    text: "HSR",
+    icon: "/assets/hsr-icon.png",
+  },
+  {
+    href: "https://enka.network/zzz/1313976028",
+    text: "ZZZ",
+    icon: "/assets/zzz-icon.png",
+  },
+  {
+    href: "https://enka.network/u/836625736/",
+    text: "GI",
+    icon: "/assets/gi-icon.png",
+  },
+];
+
 const About = () => {
   return (
     <section id="about" className="py-15 text-slate-200">
@@ -34,15 +52,11 @@ const About = () => {
             className="w-auto h-5"
           />
           <div className="flex justify-center space-x-5 mt-2">
-            <a href="https://enka.network/hsr/800735792/" target="_blank" rel="noopener noreferrer">
-              HSR
-            </a>
-            <a href="https://enka.network/u/836625736/" target="_blank" rel="noopener noreferrer">
-              GENSHIN
-            </a>
-            <a href="https://enka.network/zzz/1313976028" target="_blank" rel="noopener noreferrer">
-              ZZZ
-            </a>
+            {links.map((link) => (
+              <a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer">
+                <img src={link.icon} alt={link.text} className="h-auto w-10" />
+              </a>
+            ))}
           </div>
         </div>
       </div>
