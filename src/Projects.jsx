@@ -3,9 +3,9 @@ import { FiGithub } from "react-icons/fi";
 
 const ProjectSection = ({ header, children }) => {
   return (
-    <div className="mt-5">
+    <div>
       <p className="font-general text-slate-300 mb-8">{header}</p>
-      <div className="mb-5">{children}</div>
+      <div className="flex flex-col items-center space-y-5">{children}</div>
     </div>
   );
 };
@@ -19,28 +19,24 @@ const ProjectCard = ({
   isComplete = true,
 }) => {
   return (
-    <div className="mb-4">
-      <div className="bg-slate-950 p-3.5">
-        <p className="font-inter font-semibold text-base">{title}</p>
-        <div className="justify-start divide-x">
-          {isTeam && (
-            <div className="-mt-1 mr-2 font-fira-code text-[10px]">Team</div>
-          )}
-          {!isComplete && (
-            <div className="-mt-1 font-fira-code text-[10px]">
-              Still Ongoing
-            </div>
-          )}
-          <p className="font-general text-sm text-slate-300 mt-2 mb-5">
-            {description}
-          </p>
-        </div>
-        <p className="font-fira-code text-[10px]">{stack}</p>
-        <div className="mt-6">
-          <a href={link} target="_blank" rel="noopener noreferrer">
-            <FiGithub className="h-5 w-auto text-slate-200" />
-          </a>
-        </div>
+    <div className="bg-slate-950 p-3.5 lg:p-5 flex flex-col items-start w-full max-w-2xl">
+      <p className="font-inter font-semibold text-base lg:text-lg">{title}</p>
+      <div className="flex justify-start divide-x text-[10px] lg:text-xs font-fira-code">
+        {isTeam && (
+          <div className="-mt-1 mr-2">Team</div>
+        )}
+        {!isComplete && (
+          <div className="-mt-1">Still Ongoing</div>
+        )}
+      </div>
+      <p className="font-general text-sm lg:text-base text-slate-300 mt-2 mb-5">
+        {description}
+      </p>
+      <p className="font-fira-code text-[10px] lg:text-xs">{stack}</p>
+      <div className="mt-6">
+        <a href={link} target="_blank" rel="noopener noreferrer">
+          <FiGithub className="h-5 w-auto text-slate-200" />
+        </a>
       </div>
     </div>
   );
@@ -75,7 +71,7 @@ const projects = {
       title: "Jual Beli Akun Game (JBAG)",
       description:
         "A simple application for buying and selling various game accounts between seller and buyer. Flutter for Frontend and Laravel for Backend.",
-      stack: "Flutter, Laravel",
+      stack: "Flutter, Laravel, MySQL",
       link: "https://github.com/Asyra20/JBAG-Jual-Beli-Akun-Game",
       isTeam: true,
     },
@@ -91,7 +87,7 @@ const projects = {
     {
       title: "BIMA HELM",
       description:
-        "A website to buy various brands of helmets. Warehouse stock management and monthly reports",
+        "A website to buy various brands of helmets. Warehouse stock management and monthly reports.",
       stack: "Laravel, Reactjs, TailwindCSS, Flowbite, MySQL, Cloudinary",
       link: "https://github.com/softdevid/bima-helm",
       isTeam: true,
@@ -102,11 +98,11 @@ const projects = {
 const Projects = () => {
   return (
     <section id="projects" className="py-15 text-slate-200">
-      <h4 className="font-fira-code text-xl font-semibold uppercase tracking-widest border-b border-b-slate-400">
+      <h4 className="mb-5 font-fira-code text-xl font-semibold uppercase tracking-widest border-b border-b-slate-400">
         # Projects
       </h4>
 
-      <div className="flex flex-col space-y-5">
+      <div className="flex flex-col space-y-12">
         <ProjectSection
           header="Some of the latest projects that I have developed myself or with my
           friends are:"

@@ -3,10 +3,10 @@ import React from "react";
 const SkillCard = ({ title, tech }) => {
   return (
     <div className="bg-slate-200 p-3.5 flex flex-col items-center ">
-      <h4 className="mb-2 text-slate-800 font-general font-base uppercase">
+      <h4 className="mb-2 text-slate-800 font-general font-base lg:text-xl uppercase">
         {title}
       </h4>
-      <div className="flex justify-center space-x-3">
+      <div className="flex md:flex-col justify-center items-center space-x-3 md:space-x-0 md:space-y-3">
         {tech.map((item) => (
           <img
             key={item.alt}
@@ -86,7 +86,7 @@ const TechStack = () => {
         # Skills
       </h4>
 
-      <div className="mt-5 flex flex-col space-y-7">
+      <div className="mt-10 pb-20 flex flex-col md:flex-row md:justify-center space-y-7 md:space-y-0 md:space-x-7">
         {skills.map((skill) => (
           <SkillCard key={skill.title} title={skill.title} tech={skill.tech} />
         ))}

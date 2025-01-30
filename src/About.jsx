@@ -20,12 +20,12 @@ const links = [
 
 const About = () => {
   return (
-    <section id="about" className="py-15 text-slate-200">
+    <section id="about" className="py-15 text-slate-200 ">
       <h4 className="font-fira-code text-xl font-semibold uppercase tracking-widest border-b border-b-slate-400">
         # About Me
       </h4>
 
-      <div className="mt-8 font-general leading-relaxed text-slate-300">
+      <div className="mt-8 font-general lg:text-lg leading-relaxed text-slate-300">
         <p className="mb-4">
           Hi, my name is Dzaky and I am currently focusing on Fullstack
           Development with <span className="font-semibold">ReactJS</span>. My
@@ -49,12 +49,12 @@ const About = () => {
           <img
             src="/assets/enka-network-icon.png"
             alt="enka-network"
-            className="w-auto h-5"
+            className="w-auto h-5 md:h-8"
           />
           <div className="flex justify-center space-x-5 mt-2">
             {links.map((link) => (
               <a key={link.text} href={link.href} target="_blank" rel="noopener noreferrer">
-                <img src={link.icon} alt={link.text} className="h-auto w-10" />
+                <img src={link.icon} alt={link.text} className="h-auto w-10 md:w-14" />
               </a>
             ))}
           </div>
