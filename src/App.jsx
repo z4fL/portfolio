@@ -1,19 +1,18 @@
-import React from "react";
-import Hero from "./Hero";
 import Layout from "./Layout";
-import About from "./About";
-import Projects from "./Projects";
-import Skills from "./Skills";
-import Footer from "./Footer";
+import Hero from "./Sections/Hero";
+import About from "./Sections/About";
+import Projects from "./Sections/Projects";
+import Skills from "./Sections/Skills";
+import Footer from "./Components/Footer";
 
 const App = () => {
   return (
     <Layout>
-      <main className="px-6 md:px-24 lg:px-32 xl:px-72">
+      <main className="container mx-auto px-6 sm:px-14 md:px-24 lg:px-32 xl:px-60">
         <Hero />
         <About />
-        <Projects />
         <Skills />
+        <Projects />
       </main>
       <Footer />
     </Layout>

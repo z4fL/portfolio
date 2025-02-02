@@ -1,8 +1,6 @@
-import React from "react";
-
 const SkillCard = ({ title, tech }) => {
   return (
-    <div className="bg-slate-200 p-3.5 flex flex-col items-center ">
+    <div className="bg-slate-100 p-3.5 flex flex-col items-center">
       <h4 className="mb-2 text-slate-800 font-general font-base lg:text-xl uppercase">
         {title}
       </h4>
@@ -82,11 +80,11 @@ const skills = [
 const TechStack = () => {
   return (
     <section id="skills" className="py-15 flex flex-col">
-      <h4 className="text-slate-200 font-fira-code text-xl font-semibold uppercase tracking-widest border-b border-b-slate-400">
+      <h4 className="mb-8 text-slate-200 font-fira-code text-xl font-semibold uppercase tracking-widest border-b border-b-slate-400">
         # Skills
       </h4>
 
-      <div className="mt-10 pb-20 flex flex-col md:flex-row md:justify-center space-y-7 md:space-y-0 md:space-x-7">
+      <div className="flex flex-col md:flex-row md:justify-center space-y-7 md:space-y-0 md:space-x-7">
         {skills.map((skill) => (
           <SkillCard key={skill.title} title={skill.title} tech={skill.tech} />
         ))}

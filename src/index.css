@@ -9,14 +9,6 @@
 }
 
 @font-face {
-  font-family: "Inter";
-  src: url("/fonts/Inter-VariableFont_opsz,wght.ttf");
-  font-weight: 100 900;
-  font-display: swap;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Fira Code";
   src: url("/fonts/FiraCode-VF.ttf");
   font-weight: 300 700;
@@ -25,6 +17,101 @@
 
 @theme {
   --font-general: GeneralSans, sans-serif;
-  --font-inter: Inter, sans-serif;
   --font-fira-code: Fira Code, sans-serif;
+
+  --color-base-color: #ECE8E1;
+  --color-charcoal: #393E46;
+  --color-midnight: #131A2A;
+  --color-highlight: #F9564F;
 }
+
+/* start button */
+.btn {
+  --background-color: var(--color-midnight);
+  --button-background-color: var(--color-base-color);
+  --border-color: var(--color-charcoal);
+  --highlight-color: var(--color-highlight);
+  --button-text-color: var(--background-color);
+  --button-text-color-hover: var(--button-background-color);
+  --button-inner-border-color: transparent;
+  --button-bits-color: var(--background-color);
+  --button-bits-color-hover: var(--button-background-color);
+
+  color: var(--button-text-color);
+  position: relative;
+  display: inline-block;
+  text-align: center;
+  text-transform: uppercase;
+  font-weight: bold;
+  transition: all 0.15s ease;
+}
+
+.btn::before {
+  top: 0;
+  border-bottom-width: 0;
+}
+
+.btn::after {
+  bottom: 0;
+  border-top-width: 0;
+}
+
+.btn:active,
+.btn:focus {
+  outline: none;
+}
+
+.btn:active::before,
+.btn:active::after {
+  right: 3px;
+  left: 3px;
+}
+
+.btn:active::before {
+  top: 3px;
+}
+
+.btn:active::after {
+  bottom: 3px;
+}
+
+.btn-inner {
+  position: relative;
+  display: block;
+  padding: 15px 20px;
+  background-color: var(--button-background-color);
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
+}
+
+.btn-slide {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: var(--highlight-color);
+  transform: skew(-15deg);
+  transition: all 0.3s ease;
+}
+
+.btn-content {
+  position: relative;
+}
+
+.btn:hover {
+  color: var(--button-text-color-hover);
+}
+
+.btn:hover .btn-slide {
+  width: calc(100% + 16px);
+}
+
+.btn-dark {
+  --button-background-color: var(--background-color);
+  --button-text-color: var(--highlight-color);
+  --button-inner-border-color: var(--highlight-color);
+  --button-text-color-hover: var(--color-midnight);
+}
+/* end button */
