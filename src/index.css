@@ -23,6 +23,18 @@
   --color-charcoal: #393E46;
   --color-midnight: #131A2A;
   --color-highlight: #F9564F;
+
+  --animate-float: float 4s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%,
+  100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-14px);
+  }
 }
 
 /* start button */
@@ -115,3 +127,26 @@
   --button-text-color-hover: var(--color-midnight);
 }
 /* end button */
+
+
+.terminal-scrollbar {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+.terminal-scrollbar::-webkit-scrollbar {
+  width: 6px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+
+.terminal-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: #475569;
+}

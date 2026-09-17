@@ -8,7 +8,7 @@ import Footer from "./Components/Footer";
 const App = () => {
   return (
     <Layout>
-      <main className="container mx-auto px-6 sm:px-14 md:px-24 lg:px-32 xl:px-60">
+      <main className="container mx-auto px-6 sm:px-12 md:px-20 lg:px-28 xl:px-40">
         <Hero />
         <About />
         <Skills />

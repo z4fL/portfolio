@@ -1,16 +1,17 @@
 const SkillCard = ({ title, tech }) => {
   return (
-    <div className="bg-slate-100 p-3.5 flex flex-col items-center">
-      <h4 className="mb-2 text-slate-800 font-general font-base lg:text-xl uppercase">
+    <div className="bg-slate-100 p-4 lg:p-5 flex flex-col items-center border border-transparent hover:border-highlight transition-colors">
+      <h4 className="mb-4 text-slate-800 font-fira-code font-semibold text-xs lg:text-sm uppercase tracking-widest">
         {title}
       </h4>
-      <div className="flex md:flex-col justify-center items-center space-x-3 md:space-x-0 md:space-y-3">
+      <div className="flex flex-wrap justify-center items-center gap-4">
         {tech.map((item) => (
           <img
             key={item.alt}
             src={item.icon}
             alt={item.alt}
-            className="w-auto h-9"
+            title={item.alt}
+            className="w-auto h-8 lg:h-9 transition-transform hover:scale-110"
           />
         ))}
       </div>
@@ -80,11 +81,11 @@ const skills = [
 const TechStack = () => {
   return (
     <section id="skills" className="py-15 flex flex-col">
-      <h4 className="mb-8 text-slate-200 font-fira-code text-xl font-semibold uppercase tracking-widest border-b border-b-slate-400">
+      <h4 className="mb-8 text-slate-200 font-fira-code text-xl font-semibold uppercase tracking-widest border-b-2 border-b-highlight/60">
         # Skills
       </h4>
 
-      <div className="flex flex-col md:flex-row md:justify-center space-y-7 md:space-y-0 md:space-x-7">
+      <div className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6">
         {skills.map((skill) => (
           <SkillCard key={skill.title} title={skill.title} tech={skill.tech} />
         ))}
