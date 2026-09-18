@@ -2,6 +2,7 @@ import Layout from "./Layout";
 import Hero from "./Sections/Hero";
 import About from "./Sections/About";
 import Projects from "./Sections/Projects";
+import Publications from "./Sections/Publications";
 import Skills from "./Sections/Skills";
 import Footer from "./Components/Footer";
 
@@ -13,6 +14,7 @@ const App = () => {
         <About />
         <Skills />
         <Projects />
+        <Publications />
       </main>
       <Footer />
     </Layout>

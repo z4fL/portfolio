@@ -27,6 +27,20 @@ const slides = [
       </div>
     ),
   },
+  {
+    id: "sindoro1",
+    filename: "sindoro1.png",
+    content: (
+      <img src="assets/sindoro1.jpg" alt="Sindoro 1" className="w-full h-full object-cover" />
+    ),
+  },
+  // {
+  //   id: "sindoro2",
+  //   filename: "sindoro2.png",
+  //   content: (
+  //     <img src="assets/sindoro2.jpg" alt="Sindoro 2" className="w-full h-full object-cover" />
+  //   ),
+  // },
 ];
 
 const AUTO_ADVANCE_MS = 6500;
@@ -75,7 +89,7 @@ const HeroSlider = () => {
             transform: `translateX(-${index * SLIDE_WIDTH_PERCENT}%)`,
           }}
         >
-          {slides.map((slide, i) => (
+          {slides.map((slide) => (
             <div
               key={slide.id}
               className="shrink-0 h-full pl-px pr-3 box-border"
@@ -100,10 +114,10 @@ const HeroSlider = () => {
             type="button"
             onClick={() => handleSlideChange(i)}
             aria-label={`Lihat ${slide.filename}`}
-            className={`h-1.5 transition-all ${
+            className={`h-3 transition-all ${
               i === index
-                ? "w-6 bg-highlight"
-                : "w-1.5 bg-slate-700 hover:bg-slate-500"
+                ? "w-9 bg-highlight"
+                : "w-3 bg-slate-700 hover:bg-slate-500"
             }`}
           />
         ))}

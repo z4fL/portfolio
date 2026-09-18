@@ -1,7 +1,7 @@
 const SkillCard = ({ title, tech }) => {
   return (
     <div className="bg-slate-100 p-4 lg:p-5 flex flex-col items-center border border-transparent hover:border-highlight transition-colors">
-      <h4 className="mb-4 text-slate-800 font-fira-code font-semibold text-xs lg:text-sm uppercase tracking-widest">
+      <h4 className="mb-4 text-slate-800 font-maple font-semibold text-xs lg:text-sm uppercase tracking-widest">
         {title}
       </h4>
       <div className="flex flex-wrap justify-center items-center gap-4">
@@ -81,7 +81,7 @@ const skills = [
 const TechStack = () => {
   return (
     <section id="skills" className="py-15 flex flex-col">
-      <h4 className="mb-8 text-slate-200 font-fira-code text-xl font-semibold uppercase tracking-widest border-b-2 border-b-highlight/60">
+      <h4 className="mb-8 text-slate-200 font-maple text-xl font-semibold uppercase tracking-widest border-b-2 border-b-highlight/60">
         # Skills
       </h4>
 

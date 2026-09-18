@@ -118,23 +118,26 @@ const ProjectCard = ({
           className="w-full h-full object-cover object-top group-hover:scale-105 transition-transform duration-300"
         />
         {images.length > 1 && (
-          <span className="absolute bottom-2 right-2 flex items-center gap-1 text-[10px] font-fira-code bg-slate-950/80 px-2 py-1 text-slate-200">
+          <span className="absolute bottom-2 right-2 flex items-center gap-1 text-[10px] font-maple bg-slate-950/80 px-2 py-1 text-slate-200">
             <FaImage className="h-3 w-auto" /> {images.length}
           </span>
         )}
       </button>
+
       <FsLightbox toggler={toggler} sources={images} />
 
       <div className="p-3.5 lg:p-5 flex flex-col items-start w-full">
-        <p className="font-general font-semibold text-base lg:text-lg">{title}</p>
-        <div className="flex justify-start divide-x text-[10px] lg:text-xs font-fira-code">
+        <p className="font-general font-semibold text-base lg:text-lg">
+          {title}
+        </p>
+        <div className="flex justify-start divide-x text-[10px] lg:text-xs font-maple">
           {isTeam && <div className="-mt-1 mr-2">Team</div>}
           {!isComplete && <div className="-mt-1">Still Ongoing</div>}
         </div>
         <p className="font-general text-sm lg:text-base text-slate-300 mt-2 mb-5">
           {description}
         </p>
-        <p className="font-fira-code text-[10px] lg:text-xs">{stack}</p>
+        <p className="font-maple text-[10px] lg:text-xs">{stack}</p>
         <div className="mt-6 flex justify-start space-x-5">
           <a href={link} target="_blank" rel="noopener noreferrer">
             <FiGithub className="h-5 w-auto text-slate-200 hover:text-highlight" />
@@ -149,8 +152,8 @@ const Projects = () => {
   const [toggleMore, setToggleMore] = useState(true);
 
   return (
-    <section id="projects" className="py-15 text-slate-200">
-      <h4 className="mb-8 font-fira-code text-xl font-semibold uppercase tracking-widest border-b-2 border-b-highlight/60">
+    <section id="projects" className="pt-15 text-slate-200">
+      <h4 className="mb-8 font-maple text-xl font-semibold uppercase tracking-widest border-b-2 border-b-highlight/60">
         # Projects
       </h4>
 
@@ -206,9 +209,10 @@ const Projects = () => {
         )}
 
         <div className="pt-5 flex justify-center">
-          <button onClick={() => setToggleMore(!toggleMore)}>
-            <CTAButton text={`${toggleMore ? "See More...": "See Less..."}`} />
-          </button>
+          <CTAButton
+            text={`${toggleMore ? "See More..." : "See Less..."}`}
+            onClick={() => setToggleMore(!toggleMore)}
+          />
         </div>
       </div>
     </section>

@@ -15,14 +15,22 @@
   font-style: normal;
 }
 
+@font-face {
+  font-family: "Maple Mono";
+  src: url("/fonts/MapleMono[wght].ttf");
+  font-weight: 300 400 500 700;
+  font-style: normal;
+}
+
 @theme {
   --font-general: GeneralSans, sans-serif;
   --font-fira-code: Fira Code, sans-serif;
+  --font-maple: Maple Mono, monospace;
 
-  --color-base-color: #ECE8E1;
-  --color-charcoal: #393E46;
-  --color-midnight: #131A2A;
-  --color-highlight: #F9564F;
+  --color-base-color: #ece8e1;
+  --color-charcoal: #393e46;
+  --color-midnight: #131a2a;
+  --color-highlight: #f9564f;
 
   --animate-float: float 4s ease-in-out infinite;
 }
@@ -40,14 +48,21 @@
 /* start button */
 .btn {
   --background-color: var(--color-midnight);
-  --button-background-color: var(--color-base-color);
-  --border-color: var(--color-charcoal);
   --highlight-color: var(--color-highlight);
+
   --button-text-color: var(--background-color);
   --button-text-color-hover: var(--button-background-color);
   --button-inner-border-color: transparent;
-  --button-bits-color: var(--background-color);
-  --button-bits-color-hover: var(--button-background-color);
+
+  --button-default-background: var(--color-base-color);
+
+  --button-padding-y: 15px;
+  --button-padding-x: 20px;
+
+  --button-background-color: var(
+    --button-background,
+    var(--button-default-background)
+  );
 
   color: var(--button-text-color);
   position: relative;
@@ -56,6 +71,45 @@
   text-transform: uppercase;
   font-weight: bold;
   transition: all 0.15s ease;
+}
+
+.btn-inner {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: var(--button-padding-y) var(--button-padding-x);
+  background-color: var(--button-background-color);
+  overflow: hidden;
+  box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
+}
+
+.btn-slide {
+  display: block;
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  left: -8px;
+  width: 0;
+  background-color: var(--highlight-color);
+  transform: skew(-15deg);
+  transition: width 0.3s ease;
+}
+
+.btn-content {
+  position: relative;
+}
+
+.btn-bg-inherit {
+  --button-background-color: transparent;
+}
+
+.btn:hover {
+  color: var(--button-text-color-hover);
+}
+
+.btn:hover .btn-slide {
+  width: calc(100% + 16px);
 }
 
 .btn::before {
@@ -87,47 +141,30 @@
   bottom: 3px;
 }
 
-.btn-inner {
-  position: relative;
-  display: block;
-  padding: 15px 20px;
-  background-color: var(--button-background-color);
-  overflow: hidden;
-  box-shadow: inset 0px 0px 0px 1px var(--button-inner-border-color);
+/* sizes */
+.btn-sm {
+  --button-padding-y: 10px;
+  --button-padding-x: 16px;
 }
 
-.btn-slide {
-  display: block;
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  left: -8px;
-  width: 0;
-  background-color: var(--highlight-color);
-  transform: skew(-15deg);
-  transition: all 0.3s ease;
+.btn-md {
+  --button-padding-y: 15px;
+  --button-padding-x: 20px;
 }
 
-.btn-content {
-  position: relative;
+.btn-lg {
+  --button-padding-y: 18px;
+  --button-padding-x: 28px;
 }
 
-.btn:hover {
-  color: var(--button-text-color-hover);
-}
-
-.btn:hover .btn-slide {
-  width: calc(100% + 16px);
-}
-
+/* themes */
 .btn-dark {
-  --button-background-color: var(--background-color);
+  --button-default-background: var(--background-color);
   --button-text-color: var(--highlight-color);
   --button-inner-border-color: var(--highlight-color);
   --button-text-color-hover: var(--color-midnight);
 }
 /* end button */
-
 
 .terminal-scrollbar {
   scrollbar-width: thin;

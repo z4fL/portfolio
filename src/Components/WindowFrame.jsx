@@ -5,7 +5,7 @@ const WindowFrame = ({ filename, children }) => {
         <span className="w-2.5 h-2.5 rounded-full bg-[#FF5F56]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#FFBD2E]" />
         <span className="w-2.5 h-2.5 rounded-full bg-[#27C93F]" />
-        <span className="ml-2 font-fira-code text-[11px] text-slate-500">
+        <span className="ml-2 font-maple text-[11px] text-slate-500">
           {filename}
         </span>
       </div>

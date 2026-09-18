@@ -43,7 +43,7 @@ const TerminalContent = ({ onComplete }) => {
   }, [charCount, visibleLines, onComplete]);
 
   return (
-    <div className="terminal-scrollbar h-full overflow-y-auto p-4 font-fira-code text-xs lg:text-sm">
+    <div className="terminal-scrollbar h-full overflow-y-auto p-4 font-maple text-xs lg:text-sm">
       <div className="space-y-2">
         {Array.from(
           { length: Math.ceil(visibleLines / 2) },
