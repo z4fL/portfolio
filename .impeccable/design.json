@@ -1,0 +1,78 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-17T00:00:00+07:00",
+  "title": "Design System: Z4FL Portfolio",
+  "extensions": {
+    "colorMeta": {
+      "base": { "role": "neutral", "displayName": "Warm Paper", "canonical": "#ECE8E1", "tonalRamp": ["oklch(18% 0.01 75)", "oklch(30% 0.01 75)", "oklch(42% 0.01 75)", "oklch(54% 0.01 75)", "oklch(66% 0.01 75)", "oklch(78% 0.01 75)", "oklch(88% 0.01 75)", "oklch(94% 0.01 75)"] },
+      "charcoal": { "role": "neutral", "displayName": "Graphite Rail", "canonical": "#393E46", "tonalRamp": ["oklch(18% 0.02 250)", "oklch(28% 0.02 250)", "oklch(38% 0.02 250)", "oklch(48% 0.02 250)", "oklch(58% 0.02 250)", "oklch(68% 0.02 250)", "oklch(78% 0.02 250)", "oklch(88% 0.02 250)"] },
+      "midnight": { "role": "neutral", "displayName": "Midnight Workspace", "canonical": "#131A2A", "tonalRamp": ["oklch(15% 0.03 260)", "oklch(25% 0.03 260)", "oklch(35% 0.03 260)", "oklch(45% 0.03 260)", "oklch(55% 0.03 260)", "oklch(65% 0.03 260)", "oklch(75% 0.03 260)", "oklch(85% 0.03 260)"] },
+      "highlight": { "role": "primary", "displayName": "Workbench Coral", "canonical": "#F9564F", "tonalRamp": ["oklch(25% 0.12 28)", "oklch(35% 0.15 28)", "oklch(45% 0.18 28)", "oklch(55% 0.20 28)", "oklch(65% 0.20 28)", "oklch(75% 0.17 28)", "oklch(85% 0.12 28)", "oklch(95% 0.05 28)"] }
+    },
+    "typographyMeta": {
+      "display": { "displayName": "General Sans Display", "purpose": "Hero name and highest-level identity." },
+      "body": { "displayName": "General Sans Body", "purpose": "Biography and project explanations." },
+      "label": { "displayName": "Fira Code Label", "purpose": "Technical metadata, controls, and coded interface cues." }
+    },
+    "motion": [
+      { "name": "button-wipe", "value": "width 0.3s ease", "purpose": "Expands the skewed coral CTA reveal on hover." },
+      { "name": "standard-state", "value": "all 0.15s ease", "purpose": "Default state transition for technical controls and links." },
+      { "name": "float", "value": "float 4s ease-in-out infinite", "purpose": "Optional gentle vertical movement for floating details." }
+    ],
+    "breakpoints": [
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" },
+      { "name": "xl", "value": "1280px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary CTA",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "A square, terminal-like action with a coral wipe reveal.",
+      "html": "<button class=\"ds-btn-primary\"><span>SEE MY PROJECTS</span></button>",
+      "css": ".ds-btn-primary { position: relative; overflow: hidden; border: 1px solid #F9564F; border-radius: 0; background: #131A2A; color: #F9564F; padding: 15px 20px; font-family: 'General Sans', sans-serif; font-size: 14px; font-weight: 700; letter-spacing: .02em; text-transform: uppercase; cursor: pointer; transition: color .15s ease; } .ds-btn-primary::before { content: ''; position: absolute; inset: 0 -8px; width: 0; background: #F9564F; transform: skewX(-15deg); transition: width .3s ease; } .ds-btn-primary span { position: relative; } .ds-btn-primary:hover, .ds-btn-primary:focus-visible { color: #ECE8E1; } .ds-btn-primary:hover::before, .ds-btn-primary:focus-visible::before { width: calc(100% + 16px); } .ds-btn-primary:focus-visible { outline: 2px solid #ECE8E1; outline-offset: 3px; }"
+    },
+    {
+      "name": "Project Card",
+      "kind": "card",
+      "description": "A flat, evidence-led project container with an image stage and slate structure.",
+      "html": "<article class=\"ds-project-card\"><div class=\"ds-project-image\">PROJECT PREVIEW</div><h3>Energy Management Chatbot</h3><p>Project explanation lives here.</p><code>React · Golang · PostgreSQL</code></article>",
+      "css": ".ds-project-card { overflow: hidden; border: 1px solid #334155; border-radius: 0; background: #020617; color: #ECE8E1; font-family: 'General Sans', sans-serif; transition: border-color .2s ease; } .ds-project-card:hover { border-color: #F9564F; } .ds-project-image { display: grid; aspect-ratio: 16 / 9; place-items: center; background: #131A2A; color: #94A3B8; font: 600 11px 'Fira Code', monospace; letter-spacing: .08em; } .ds-project-card h3 { margin: 20px 20px 8px; font-size: 18px; } .ds-project-card p { margin: 0 20px 18px; color: #CBD5E1; line-height: 1.5; } .ds-project-card code { display: block; margin: 0 20px 20px; color: #CBD5E1; font: 11px 'Fira Code', monospace; }"
+    },
+    {
+      "name": "Skill Card",
+      "kind": "card",
+      "description": "A pale, square skill group that contrasts against the midnight site field.",
+      "html": "<section class=\"ds-skill-card\"><h3>BACKEND</h3><p>Golang · Laravel</p></section>",
+      "css": ".ds-skill-card { border: 1px solid transparent; border-radius: 0; background: #ECE8E1; color: #131A2A; padding: 20px; text-align: center; font-family: 'General Sans', sans-serif; transition: border-color .2s ease; } .ds-skill-card:hover { border-color: #F9564F; } .ds-skill-card h3 { margin: 0 0 16px; font: 600 12px 'Fira Code', monospace; letter-spacing: .1em; } .ds-skill-card p { margin: 0; font-size: 14px; }"
+    },
+    {
+      "name": "Terminal Window",
+      "kind": "custom",
+      "description": "A compact terminal framing module for identity and proof content.",
+      "html": "<section class=\"ds-terminal\"><header><i></i><i></i><i></i><span>whoami.sh</span></header><pre>$ whoami\nDzaky Fadli Firmansyah</pre></section>",
+      "css": ".ds-terminal { overflow: hidden; border: 1px solid #334155; border-radius: 0; background: #020617; color: #CBD5E1; } .ds-terminal header { display: flex; align-items: center; gap: 6px; border-bottom: 1px solid #334155; padding: 8px 12px; } .ds-terminal i { width: 10px; height: 10px; border-radius: 9999px; background: #FF5F56; } .ds-terminal i:nth-child(2) { background: #FFBD2E; } .ds-terminal i:nth-child(3) { background: #27C93F; } .ds-terminal span { margin-left: 8px; color: #64748B; font: 11px 'Fira Code', monospace; } .ds-terminal pre { margin: 0; padding: 16px; color: #ECE8E1; font: 12px/1.6 'Fira Code', monospace; white-space: pre-wrap; }"
+    },
+    {
+      "name": "Social Rail Link",
+      "kind": "nav",
+      "description": "A quiet utility link that becomes coral and rises slightly on hover.",
+      "html": "<a class=\"ds-rail-link\" href=\"#\">GITHUB</a>",
+      "css": ".ds-rail-link { display: inline-block; color: #94A3B8; font: 600 12px 'Fira Code', monospace; letter-spacing: .1em; text-decoration: none; transition: color .15s ease, transform .15s ease; } .ds-rail-link:hover, .ds-rail-link:focus-visible { color: #F9564F; transform: translateY(-4px); } .ds-rail-link:focus-visible { outline: 2px solid #ECE8E1; outline-offset: 4px; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "The Developer’s Workbench",
+    "overview": "This portfolio is a focused, midnight-dark workspace where the work is the evidence. Large, humanist display type establishes professional confidence; monospaced labels, terminal windows, code-like section markers, and fine rules make the developer craft tangible without turning the page into a novelty interface.\n\nThe system balances restraint with selective expression. Pale text and quiet slate structural lines carry nearly all of the interface, while the coral highlight is reserved for headings, interaction, status, and decisive action. Panels remain flat and border-led, prioritizing inspectability over decorative depth.",
+    "keyCharacteristics": ["Dark, technical, and editorial rather than glossy or futuristic.", "One saturated coral accent against midnight and slate neutrals.", "General Sans for confident reading; Fira Code for code-adjacent metadata.", "Square-edged containers, fine borders, and deliberate, low-friction motion."],
+    "rules": [
+      { "name": "The Signal, Not Fill Rule", "body": "Coral is an intentional signal, not a background system: keep it focused on state, action, and emphasis rather than flooding a full section.", "section": "colors" },
+      { "name": "The Two-Voice Rule", "body": "Use General Sans for human, explanatory, and persuasive copy; use Fira Code only when the text behaves like a label, command, filename, tag, or system annotation.", "section": "typography" },
+      { "name": "The Flat-By-Default Rule", "body": "Do not introduce ambient card shadows; borders, surface tone, and motion communicate grouping and interaction.", "section": "elevation" }
+    ],
+    "dos": ["Do use the midnight field, pale text, slate border structure, and coral signal color as the core palette roles.", "Do reserve Fira Code for technical labels, code-like framing, controls, and metadata.", "Do keep project evidence image-forward, using square cards and thin borders.", "Do use concise transitions for button wipes, image scale, border color, and small icon movement."],
+    "donts": ["Don't add rounded cards, pills, or soft glassmorphism to the primary layout.", "Don't introduce ambient drop shadows as the main grouping mechanism.", "Don't use coral as a dominant page background or replace the midnight working surface with a light theme by default.", "Don't use monospaced type for long-form biography or project narrative."]
+  }
+}
