@@ -95,6 +95,6 @@ See [`PRODUCT.md`](./PRODUCT.md) for target users, positioning, and product prin
 
 ## License
 
-The **source code** (components, scripts, config) is licensed under [MIT](./LICENSE) — feel free to fork it, learn from the structure, or reuse the version-archiving setup.
+The **source code** (components, scripts, config) is licensed under [MIT](./LICENSE.md) — feel free to fork it, learn from the structure, or reuse the version-archiving setup.
 
 **Personal content** (CV, publications, project screenshots, photos, and logo) is **not** covered by that license and remains all rights reserved.
