@@ -31,7 +31,7 @@ execSync(`git worktree add --detach "${worktreeDir}" HEAD`, { cwd: root, stdio: 
 fs.symlinkSync(path.join(root, "node_modules"), path.join(worktreeDir, "node_modules"), "dir");
 
 // 3. Build dengan base relatif, biar path asset bener meski dipindah ke folder nested
-execSync(`npx vite build --outDir "${distDir}" --base=./`, {
+execSync(`pnx vite build --outDir "${distDir}" --base=./`, {
   cwd: worktreeDir,
   stdio: "inherit",
 });
@@ -50,7 +50,7 @@ for (const file of fs.readdirSync(path.join(distDir, "assets"))) {
 // 5. Sisipin banner arsip (murni HTML statis, di luar bundle React yang dibekukan)
 const indexPath = path.join(snapshotDir, "index.html");
 let html = fs.readFileSync(indexPath, "utf-8");
-const banner = `<div style="font-family: 'Fira Code', monospace; font-size: 12px; background: #131A2A; color: #ECE8E1; border-bottom: 2px solid #F9564F; padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center;">
+const banner = `<div style="font-family: 'Maple Mono', monospace; font-size: 12px; background: #131A2A; color: #ECE8E1; border-bottom: 2px solid #F9564F; padding: 10px 16px; display: flex; align-items: center; justify-content: center; gap: 12px; text-align: center;">
       <span>\ud83d\udce6 Archive <strong style="color: #ff8b86;">${versionName}</strong> \u2014 previous version, not the latest.</span>
       <a href="../../" style="color: #ECE8E1; text-decoration: underline;">Back to the latest version \u2192</a>
     </div>
