@@ -16,7 +16,7 @@ function serveVersionedIndex() {
           const filePath = path.join(
             server.config.publicDir,
             req.url,
-            "index.html"
+            "index.html",
           );
           if (fs.existsSync(filePath)) {
             req.url += "index.html";
@@ -30,10 +30,16 @@ function serveVersionedIndex() {
 
 // https://vite.dev/config/
 export default defineConfig({
+  // GitHub Pages project page is hosted at the /portfolio/ subpath, not root.
+  // This only applies to a regular `vite build` (pnpm build / predeploy). Old
+  // snapshots under public/old/<n>/ are unaffected, since
+  // create-version-snapshot.mjs overrides this base with --base=./ (relative)
+  // because they're nested deeper.
+  base: "/portfolio/",
   plugins: [react(), tailwindcss(), serveVersionedIndex()],
   server: {
     allowedHosts: [
-      'deeply-lenient-mammoth.ngrok-free.app' // ngrok
-    ]
-  }
+      "deeply-lenient-mammoth.ngrok-free.app", // ngrok
+    ],
+  },
 });

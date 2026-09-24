@@ -17,21 +17,23 @@ Built as a "developer's workbench": a focused, terminal-inspired workspace where
 ```bash
 # install dependencies
 pnpm install
-
+ 
 # start dev server
 pnpm dev
-
+ 
 # lint
 pnpm lint
-
+ 
 # production build
 pnpm build
-
+ 
 # preview production build
 pnpm preview
-
-# deploy to GitHub Pages
-pnpm deploy
+ 
+# deploy to GitHub Pages (predeploy runs lint + build automatically)
+# note: use `pnpm run deploy`, not `pnpm deploy` — the latter triggers
+# pnpm's own built-in deploy command instead of this script
+pnpm run deploy
 ```
 
 ## Project Structure
