@@ -13,6 +13,24 @@ dist-ssr
 *.local
 tmp
 
+# Ignore assets in old version and exclude asset css js
+public/old/1/assets/*
+!public/old/1/assets/*.js
+!public/old/1/assets/*.css
+
+# Ignore PNG and JPG/JPEG files
+*.png
+*.PNG
+*.jpg
+*.JPG
+*.jpeg
+*.JPEG
+
+# Explicitly allow WebP files (override if needed, though not strictly required since they aren't matched above)
+!*.webp
+!*.WEBP
+
+
 # Editor directories and files
 .vscode/*
 !.vscode/extensions.json
