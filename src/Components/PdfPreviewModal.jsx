@@ -1,6 +1,8 @@
 import { useEffect, useRef, useState } from "react";
 import { Document, Page, pdfjs } from "react-pdf";
 import pdfWorker from "pdfjs-dist/build/pdf.worker.min.mjs?url";
+import "react-pdf/dist/esm/Page/AnnotationLayer.css";
+import "react-pdf/dist/esm/Page/TextLayer.css";
 import {
   FiChevronUp,
   FiChevronDown,
@@ -42,7 +44,12 @@ const PdfPreviewModal = ({ isOpen, onClose, fileUrl, title, citation }) => {
     if (!isOpen || !previewRef.current) return undefined;
     const updateWidth = () => {
       const availableWidth = previewRef.current?.clientWidth ?? 640;
-      setPageWidth(Math.max(260, Math.min(680, availableWidth - 32)));
+
+      setPageWidth(
+        window.innerWidth < 640
+          ? availableWidth
+          : Math.min(680, availableWidth - 48),
+      );
     };
     updateWidth();
     const observer = new ResizeObserver(updateWidth);
@@ -135,15 +142,12 @@ const PdfPreviewModal = ({ isOpen, onClose, fileUrl, title, citation }) => {
 
   return (
     <div
-      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-4 sm:p-8"
+      className="fixed inset-0 z-50 flex items-center justify-center bg-slate-950/90 p-0 sm:p-8"
       role="dialog"
       aria-modal="true"
       aria-labelledby="pdf-preview-title"
-      onMouseDown={(event) => {
-        if (event.target === event.currentTarget) handleClose();
-      }}
     >
-      <div className="flex h-[96vh] w-full max-w-5xl flex-col border border-slate-600 bg-slate-900 text-slate-100 shadow-2xl">
+      <div className="flex h-full md:h-[96vh] w-full max-w-5xl flex-col border border-slate-600 bg-slate-900 text-slate-100 shadow-2xl">
         {/* Compact single-row header: no kicker label, title + citation share one line */}
         <header className="flex items-center justify-between gap-4 border-b border-slate-700 px-4 py-2.5 sm:px-5">
           <div className="flex min-w-0 items-baseline gap-3">
@@ -169,15 +173,98 @@ const PdfPreviewModal = ({ isOpen, onClose, fileUrl, title, citation }) => {
           </button>
         </header>
 
+        {/* Mobile toolbar: fixed below the header and kept outside the scroll area. */}
+        <div className="flex shrink-0 items-center justify-center gap-1 border-b border-slate-700 bg-slate-900/95 p-1.5 shadow-lg backdrop-blur-sm sm:hidden">
+          <button
+            type="button"
+            onClick={() => goToPage(pageNumber - 1)}
+            disabled={pageNumber <= 1}
+            className="border border-slate-700 p-1.5 text-slate-300 transition-colors enabled:hover:border-highlight enabled:hover:text-highlight disabled:cursor-not-allowed disabled:opacity-35"
+            aria-label="Previous page"
+          >
+            <FiChevronUp className="h-4 w-4" />
+          </button>
+
+          <div className="flex items-center gap-0.5 font-fira-code text-[10px] text-slate-400">
+            <input
+              type="text"
+              inputMode="numeric"
+              value={pageDraft}
+              onChange={(event) =>
+                setPageDraft(event.target.value.replace(/[^0-9]/g, ""))
+              }
+              onBlur={commitPageDraft}
+              onKeyDown={(event) => {
+                if (event.key === "Enter") {
+                  event.currentTarget.blur();
+                }
+              }}
+              disabled={numPages <= 1}
+              aria-label="Jump to page"
+              className="w-7 border-none bg-transparent py-0.5 text-center text-slate-200 focus-visible:outline-1 focus-visible:outline-offset-1 focus-visible:outline-highlight"
+            />
+            <span className="whitespace-nowrap">
+              {numPages ? `/${numPages}` : ""}
+            </span>
+          </div>
+
+          <button
+            type="button"
+            onClick={() => goToPage(pageNumber + 1)}
+            disabled={!numPages || pageNumber >= numPages}
+            className="border border-slate-700 p-1.5 text-slate-300 transition-colors enabled:hover:border-highlight enabled:hover:text-highlight disabled:cursor-not-allowed disabled:opacity-35"
+            aria-label="Next page"
+          >
+            <FiChevronDown className="h-4 w-4" />
+          </button>
+
+          <div className="mx-0.5 h-5 w-px bg-slate-700" />
+
+          <button
+            type="button"
+            onClick={() => setScale((value) => Math.min(1.3, value + 0.1))}
+            disabled={scale >= 1.3}
+            className="border border-slate-700 p-1.5 text-slate-300 transition-colors enabled:hover:border-highlight enabled:hover:text-highlight disabled:cursor-not-allowed disabled:opacity-35"
+            aria-label="Zoom in"
+          >
+            <FiPlus className="h-4 w-4" />
+          </button>
+
+          <span className="whitespace-nowrap px-0.5 font-fira-code text-[10px] text-slate-400">
+            {Math.round(scale * 100)}%
+          </span>
+
+          <button
+            type="button"
+            onClick={() => setScale((value) => Math.max(0.8, value - 0.1))}
+            disabled={scale <= 0.8}
+            className="border border-slate-700 p-1.5 text-slate-300 transition-colors enabled:hover:border-highlight enabled:hover:text-highlight disabled:cursor-not-allowed disabled:opacity-35"
+            aria-label="Zoom out"
+          >
+            <FiMinus className="h-4 w-4" />
+          </button>
+
+          <div className="mx-0.5 h-5 w-px bg-slate-700" />
+
+          <a
+            href={fileUrl}
+            download
+            className="border border-highlight p-1.5 text-highlight transition-colors hover:bg-highlight hover:text-slate-950 focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-highlight"
+            aria-label="Download document"
+          >
+            <FiDownload className="h-4 w-4" />
+          </a>
+        </div>
+
         {/* Outer wrapper stays fixed in place; only the inner pane scrolls, so the
             floating toolbar (a sibling, not a child, of the scroll area) never
             travels with the document content. */}
         <div className="relative min-h-0 flex-1 overflow-hidden bg-slate-950">
           <div
             ref={previewRef}
-            className="terminal-scrollbar absolute inset-0 overflow-auto p-4 sm:p-6"
+            className="terminal-scrollbar absolute inset-0 overflow-auto p-0 sm:p-6"
           >
-            <div className="mx-auto flex w-fit flex-col items-center gap-4">
+            <div className="mx-auto flex w-full flex-col items-center gap-4">
               <Document
                 file={fileUrl}
                 onLoadSuccess={({ numPages: totalPages }) => {
@@ -209,8 +296,8 @@ const PdfPreviewModal = ({ isOpen, onClose, fileUrl, title, citation }) => {
                         pageNumber={page}
                         width={pageWidth}
                         scale={scale}
-                        renderTextLayer={false}
-                        renderAnnotationLayer={false}
+                        renderTextLayer
+                        renderAnnotationLayer
                         onRenderSuccess={() => {
                           if (restorePageRef.current !== page) return;
 
@@ -229,7 +316,7 @@ const PdfPreviewModal = ({ isOpen, onClose, fileUrl, title, citation }) => {
 
           {/* Floating vertical toolbar: absolute against the outer wrapper above,
               pinned to the bottom-right corner regardless of scroll position. */}
-          <div className="absolute right-3 bottom-4 z-10 flex flex-col items-center gap-1 border border-slate-700 bg-slate-900/85 p-1.5 shadow-lg backdrop-blur-sm">
+          <div className="absolute right-3 bottom-4 z-10 hidden sm:flex flex-col items-center gap-1 border border-slate-700 bg-slate-900/85 p-1.5 shadow-lg backdrop-blur-sm">
             <button
               type="button"
               onClick={() => goToPage(pageNumber - 1)}

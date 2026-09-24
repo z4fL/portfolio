@@ -2,57 +2,54 @@ const links = [
   {
     href: "https://enka.network/hsr/800735792",
     text: "HSR",
-    icon: "/assets/hsr-icon.png",
+    icon: "/assets/game/hsr-icon.webp",
   },
   // {
   //   href: "https://enka.network/zzz/1313976028",
   //   text: "ZZZ",
-  //   icon: "/assets/zzz-icon.png",
+  //   icon: "/assets/game/zzz-icon.webp",
   // },
   // {
   //   href: "https://enka.network/u/836625736",
   //   text: "GI",
-  //   icon: "/assets/gi-icon.png",
+  //   icon: "/assets/game/gi-icon.webp",
   // },
 ];
 
 const About = () => {
   return (
     <section id="about" className="pt-15 pb-8 text-slate-200">
-      <h4 className="mb-8 font-maple text-xl font-semibold uppercase tracking-widest border-b-2 border-b-highlight/60">
-        # About Me
+      <h4
+        className="mb-8 font-maple text-xl font-bold uppercase tracking-widest border-b-2 border-b-highlight/80 pb-2
+                  before:content-['|>'] before:tracking-normal before:inline-block before:mr-2"
+      >
+        About Me
       </h4>
 
-      <div className="px-12 font-general lg:text-lg leading-normal text-slate-300 text-left md:text-justify [text-align-last:left]">
+      <div className="px-4 md:px-12 font-general text-md lg:text-lg leading-normal text-slate-300 text-justify [text-align-last:left]">
         <p className="mb-4">
-          Hi, I&apos;m Dzaky, a Computer Science graduate focused on Fullstack Web
-          Development, with a particular interest in Backend Engineering and API
-          Development.
+          Hi, I&apos;m Dzaky, a Computer Science graduate focused on Fullstack
+          Web Development, with a particular interest in Backend Engineering and
+          API Development.
         </p>
         <p className="mb-4">
-          My journey in web development started with Laravel 8 in 2022, while I
-          was studying at Vocational High School. Since then, I&apos;ve continued
-          exploring modern web technologies and eventually focused more on the
-          React ecosystem. I&apos;ve worked with ReactJS, NextJS, and Laravel, while
-          also exploring Golang for backend development and Flutter for mobile
-          application development.
+          My journey started with Laravel back in 2022 during vocational high
+          school, and later expanded into ReactJS, NextJS, and Golang through
+          MBKM MSIB Batch 7 at Ruangguru. I&apos;m also the first author of a
+          Sinta 3-accredited journal publication on esports match outcome
+          prediction using machine learning.
         </p>
         <p className="mb-6">
-          I participated in MBKM MSIB Batch 7 at Ruangguru, where I deepened my
-          experience with Golang and ReactJS, including integrating applications
-          with AI services such as Hugging Face.
-        </p>
-        <p className="mb-6">
-          Currently, I&apos;m focused on building web applications and APIs while
-          improving my understanding of backend architecture, system design,
-          testing, security, and scalability. I&apos;m also interested in exploring
-          how AI can be integrated into practical applications.
+          Currently, I&apos;m focused on building web applications and APIs
+          while deepening my understanding of backend architecture, system
+          design, security, and scalability, along with exploring how AI can be
+          integrated into practical applications.
         </p>
 
         <div className="text-left">
           <p className="mb-3 flex items-center gap-2 text-sm lg:text-base">
             Outside of coding, I enjoy gacha and MOBA games. Here&apos;s my
-            Honkai: Star Rail account:
+            Honkai: Star Rail account
           </p>
           <div className="flex flex-wrap gap-3">
             {links.map((link) => (

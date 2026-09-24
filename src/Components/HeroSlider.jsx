@@ -23,22 +23,22 @@ const slides = [
     filename: "logo.png",
     content: (
       <div className="w-full h-full flex items-center justify-center p-2">
-        <img src="/logo.png" alt="Logo" className="max-h-48 w-auto" />
+        <img src="/logo.webp" alt="Logo" className="max-h-48 w-auto" />
       </div>
     ),
   },
   {
     id: "sindoro1",
-    filename: "sindoro1.png",
+    filename: "sindoro1.webp",
     content: (
-      <img src="assets/sindoro1.jpg" alt="Sindoro 1" className="w-full h-full object-cover" />
+      <img src="assets/profile/sindoro1.webp" alt="Sindoro 1" className="w-full h-full object-cover" />
     ),
   },
   // {
   //   id: "sindoro2",
   //   filename: "sindoro2.png",
   //   content: (
-  //     <img src="assets/sindoro2.jpg" alt="Sindoro 2" className="w-full h-full object-cover" />
+  //     <img src="assets/profile/sindoro2.webp" alt="Sindoro 2" className="w-full h-full object-cover" />
   //   ),
   // },
 ];

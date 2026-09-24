@@ -4,13 +4,15 @@ import PdfPreviewModal from "../Components/PdfPreviewModal";
 import CTAButton from "../Components/CTAButton";
 
 const publication = {
+  id: "match-outcome-prediction-msc2025",
   title:
     "Match Outcome Prediction in Draft Pick and In-game Phases of MSC 2025 Mobile Legends using Random Forest and XGBoost",
   journal: "Journal of Applied Informatics and Computing (JAIC)",
   issue: "Vol. 9, No. 6 · December 2025 · pp. 3892–3903",
   authors: "Dzaky Fadli Firmansyah · Adam Prayogo Kuncoro · Riyanto",
   methods: ["Random Forest", "XGBoost", "Machine Learning", "Mobile Legends"],
-  fileUrl: "/publications/dzaky-msc-2025-match-outcome-prediction.pdf",
+  fileUrlpdf: "/publications/dzaky-msc-2025-match-outcome-prediction.pdf",
+  fileUrlmd: "/publications/dzaky-msc-2025-match-outcome-prediction.md",
   doiUrl: "https://doi.org/10.30871/jaic.v9i6.11658",
 };
 
@@ -20,11 +22,15 @@ const Publications = () => {
   return (
     <>
       <section id="publications" className="py-15 text-slate-200">
-        <h4 className="mb-8 border-b-2 border-b-highlight/60 font-maple text-xl font-semibold uppercase tracking-widest">
-          # Publications
+        <h4
+          className="mb-8 border-b-2 border-b-highlight/80 font-maple text-xl font-bold uppercase tracking-widest pb-2
+                    before:content-['|>'] before:tracking-normal before:inline-block before:mr-2"
+        >
+          Publication
         </h4>
 
         <article
+          id={publication.id}
           style={{
             "--button-background": "transparent",
           }}
@@ -80,12 +86,30 @@ const Publications = () => {
                   className="w-full font-maple text-[11px] tracking-[0.14em]"
                   contentClassName="inline-flex items-center justify-center gap-2"
                 />
-                <a href={publication.fileUrl} download className="w-full">
+                <a href={publication.fileUrlpdf} download className="w-full">
                   <CTAButton
                     text={
                       <>
                         <FiDownload className="h-4 w-4" />
                         Download PDF
+                      </>
+                    }
+                    dark={false}
+                    style={{
+                      "--button-background": "var(--color-base-color)",
+                      "--button-padding-x": "16px",
+                      "--button-padding-y": "12px",
+                    }}
+                    className="w-full font-maple text-[11px] tracking-[0.14em]"
+                    contentClassName="inline-flex items-center justify-center gap-2"
+                  />
+                </a>
+                <a href={publication.fileUrlmd} download className="w-full">
+                  <CTAButton
+                    text={
+                      <>
+                        <FiDownload className="h-4 w-4" />
+                        Download Markdown
                       </>
                     }
                     dark={false}
@@ -128,10 +152,10 @@ const Publications = () => {
       </section>
 
       <PdfPreviewModal
-        key={publication.fileUrl}
+        key={publication.fileUrlpdf}
         isOpen={isPreviewOpen}
         onClose={() => setIsPreviewOpen(false)}
-        fileUrl={publication.fileUrl}
+        fileUrl={publication.fileUrlpdf}
         title={publication.title}
         citation={publication.authors}
       />

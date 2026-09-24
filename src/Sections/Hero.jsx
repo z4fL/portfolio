@@ -12,15 +12,15 @@ const Hero = () => {
 
   return (
     <>
-      <section id="hero" className="min-h-[500px] pt-10 md:pt-10 text-slate-50">
+      <section id="hero" className="min-h-125 pt-10 md:pt-10 text-slate-50">
         <div className="md:pt-10 lg:pt-20 flex items-center justify-between gap-10 lg:gap-16">
           <div className="flex flex-col">
             <img
-              src="/logo.png"
+              src="/logo.webp"
               alt="Logo"
               className="h-auto w-12 mb-4 md:hidden"
             />
-            <div className="w-12 h-1 bg-highlight mb-4" />
+            <div className="lg:hidden w-12 h-1 bg-highlight mb-4" />
             <h4 className="font-general text-sm lg:text-base">
               Hi, my name is
             </h4>
@@ -45,7 +45,7 @@ const Hero = () => {
                 </a>
               ))}
             </div>
-            <div className="flex flex-wrap items-center gap-4 mt-10 md:mt-12">
+            <div className="flex flex-wrap items-center gap-6 mt-10 md:mt-12">
               <a
                 href="#projects"
                 className="w-fit text-center text-sm md:text-base font-general tracking-wide font-semibold text-slate-900"

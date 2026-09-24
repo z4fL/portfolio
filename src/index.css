@@ -9,13 +9,6 @@
 }
 
 @font-face {
-  font-family: "Fira Code";
-  src: url("/fonts/FiraCode-VF.ttf");
-  font-weight: 300 700;
-  font-style: normal;
-}
-
-@font-face {
   font-family: "Maple Mono";
   src: url("/fonts/MapleMono[wght].ttf");
   font-weight: 300 400 500 700;
@@ -24,15 +17,12 @@
 
 @theme {
   --font-general: GeneralSans, sans-serif;
-  --font-fira-code: Fira Code, sans-serif;
   --font-maple: Maple Mono, monospace;
 
   --color-base-color: #ece8e1;
   --color-charcoal: #393e46;
   --color-midnight: #131a2a;
   --color-highlight: #f9564f;
-
-  --animate-float: float 4s ease-in-out infinite;
 }
 
 @keyframes float {
