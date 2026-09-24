@@ -26,21 +26,7 @@ const slides = [
         <img src="/logo.webp" alt="Logo" className="max-h-48 w-auto" />
       </div>
     ),
-  },
-  {
-    id: "sindoro1",
-    filename: "sindoro1.webp",
-    content: (
-      <img src="assets/profile/sindoro1.webp" alt="Sindoro 1" className="w-full h-full object-cover" />
-    ),
-  },
-  // {
-  //   id: "sindoro2",
-  //   filename: "sindoro2.png",
-  //   content: (
-  //     <img src="assets/profile/sindoro2.webp" alt="Sindoro 2" className="w-full h-full object-cover" />
-  //   ),
-  // },
+  }
 ];
 
 const AUTO_ADVANCE_MS = 6500;

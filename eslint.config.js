@@ -39,4 +39,10 @@ export default [
       "react/prop-types": "off",
     },
   },
+  {
+    files: ["scripts/**/*.js"],
+    languageOptions: {
+      globals: globals.node,
+    },
+  },
 ];

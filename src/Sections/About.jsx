@@ -4,16 +4,6 @@ const links = [
     text: "HSR",
     icon: "/assets/game/hsr-icon.webp",
   },
-  // {
-  //   href: "https://enka.network/zzz/1313976028",
-  //   text: "ZZZ",
-  //   icon: "/assets/game/zzz-icon.webp",
-  // },
-  // {
-  //   href: "https://enka.network/u/836625736",
-  //   text: "GI",
-  //   icon: "/assets/game/gi-icon.webp",
-  // },
 ];
 
 const About = () => {
