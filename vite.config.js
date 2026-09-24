@@ -31,4 +31,9 @@ function serveVersionedIndex() {
 // https://vite.dev/config/
 export default defineConfig({
   plugins: [react(), tailwindcss(), serveVersionedIndex()],
+  server: {
+    allowedHosts: [
+      'deeply-lenient-mammoth.ngrok-free.app' // ngrok
+    ]
+  }
 });
