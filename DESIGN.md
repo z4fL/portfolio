@@ -19,7 +19,7 @@ typography:
     fontWeight: 400
     lineHeight: 1.5
   label:
-    fontFamily: "Fira Code, monospace"
+    fontFamily: "Maple Mono, monospace"
     fontSize: "0.75rem"
     fontWeight: 600
     letterSpacing: "0.1em"
@@ -62,7 +62,7 @@ The system balances restraint with selective expression. Pale text and quiet sla
 
 - Dark, technical, and editorial rather than glossy or futuristic.
 - One saturated coral accent against midnight and slate neutrals.
-- General Sans for confident reading; Fira Code for code-adjacent metadata.
+- General Sans for confident reading; Maple Mono for code-adjacent metadata.
 - Square-edged containers, fine borders, and deliberate, low-friction motion.
 
 ## Colors
@@ -87,21 +87,21 @@ The palette treats midnight as the working surface, warm off-white as the contra
 
 **Display Font:** General Sans (with sans-serif fallback)
 **Body Font:** General Sans (with sans-serif fallback)
-**Label/Mono Font:** Fira Code (with monospace fallback)
+**Label/Mono Font:** Maple Mono (with monospace fallback)
 
-**Character:** General Sans provides the portfolio’s confident, approachable professional voice. Fira Code adds a compact, technical annotation layer for roles, section names, tags, filenames, and supporting interface metadata.
+**Character:** General Sans provides the portfolio’s confident, approachable professional voice. Maple Mono adds a compact, technical annotation layer for roles, section names, tags, filenames, and supporting interface metadata.
 
 ### Hierarchy
 
 - **Display** (700, responsive 3rem–5.5rem, 1.05): hero name only; tight tracking creates the strongest visual anchor.
 - **Headline** (600–700, 1.25rem–1.5rem, compact): project and skill-group titles.
-- **Title** (600, 1.25rem, compact): numbered, uppercase section headings in Fira Code.
+- **Title** (600, 1.25rem, compact): numbered, uppercase section headings in Maple Mono.
 - **Body** (400, 1rem–1.125rem, 1.5): biography and project explanation; use muted light text on dark surfaces.
 - **Label** (600, 0.625rem–0.75rem, 0.1em tracking, uppercase): technology stacks, controls, and coded interface cues.
 
 ### Named Rules
 
-**The Two-Voice Rule.** Use General Sans for human, explanatory, and persuasive copy; use Fira Code only when the text behaves like a label, command, filename, tag, or system annotation.
+**The Two-Voice Rule.** Use General Sans for human, explanatory, and persuasive copy; use Maple Mono only when the text behaves like a label, command, filename, tag, or system annotation.
 
 ## Layout
 
@@ -143,7 +143,7 @@ The CTA is a coded control rather than a soft pill.
 ### Navigation
 
 - **Style:** a fixed left social rail on large screens, reducing to inline hero icons on narrow screens.
-- **Typography:** email is vertical Fira Code with wide tracking; icons remain simple monochrome marks.
+- **Typography:** email is vertical Maple Mono with wide tracking; icons remain simple monochrome marks.
 - **States:** inactive links are muted slate; hover changes to coral and moves the mark upward slightly.
 
 ### Terminal Window
@@ -156,7 +156,7 @@ The CTA is a coded control rather than a soft pill.
 ### Do:
 
 - **Do** use the midnight field, pale text, slate border structure, and coral signal color as the core palette roles.
-- **Do** reserve Fira Code for technical labels, code-like framing, controls, and metadata.
+- **Do** reserve Maple Mono for technical labels, code-like framing, controls, and metadata.
 - **Do** keep project evidence image-forward, using square cards and thin borders.
 - **Do** use concise transitions for button wipes, image scale, border color, and small icon movement.
 

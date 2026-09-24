@@ -17,7 +17,7 @@ related_targets: ["src/Components/PdfPreviewModal.jsx"]
 
 THESIS: A single peer-reviewed paper reads as a citation ledger entry, not a portfolio project card.
 
-OWN-WORLD: Midnight and graphite surfaces, warm-paper type, restrained coral signals, General Sans prose, Fira Code for journal and method metadata, and flat square borders.
+OWN-WORLD: Midnight and graphite surfaces, warm-paper type, restrained coral signals, General Sans prose, Maple Mono for journal and method metadata, and flat square borders.
 
 STORY: Visitors see the publication's scholarly context, learn the concrete modelling question and result, then choose an appropriately deep reading action.
 
