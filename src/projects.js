@@ -1,3 +1,4 @@
+import { asset } from "./lib/asset";
 export const projects = {
   mySelf: [
     {
@@ -19,9 +20,9 @@ export const projects = {
       link: "https://github.com/z4fL/evaluation-of-msc2025",
       publication: "match-outcome-prediction-msc2025",
       images: [
-        "/project-imgs/evaluation_msc25.webp",
-        "/project-imgs/evaluation_msc25_2.webp",
-        "/project-imgs/evaluation_msc25_3.webp",
+        asset("/project-imgs/evaluation_msc25.webp"),
+        asset("/project-imgs/evaluation_msc25_2.webp"),
+        asset("/project-imgs/evaluation_msc25_3.webp"),
       ],
       coverStyle: "object-cover object-center",
     },
@@ -33,11 +34,11 @@ export const projects = {
       link: "https://github.com/z4fL/food-order-app",
       images: [
         "https://raw.githubusercontent.com/z4fL/food-order-app/refs/heads/main/public/logo.png",
-        "/project-imgs/foodorder1.webp",
-        "/project-imgs/foodorder2.webp",
-        "/project-imgs/foodorder3.webp",
-        "/project-imgs/foodorder4.webp",
-        "/project-imgs/foodorder5.webp",
+        asset("/project-imgs/foodorder1.webp"),
+        asset("/project-imgs/foodorder2.webp"),
+        asset("/project-imgs/foodorder3.webp"),
+        asset("/project-imgs/foodorder4.webp"),
+        asset("/project-imgs/foodorder5.webp"),
       ],
       coverStyle: "object-contain object-center",
     },
@@ -47,7 +48,10 @@ export const projects = {
         "A web application that analyzes historical IoT sensor data to answer user questions and provide energy-saving recommendations through a chat interface.",
       stack: "Reactjs, TailwindCSS, Golang, Huggingface API, PostgreSQL",
       link: "https://github.com/z4fL/chatbot-smarthome-energy-management",
-      images: ["/project-imgs/chatbot1.webp", "/project-imgs/chatbot2.webp"],
+      images: [
+        asset("/project-imgs/chatbot1.webp"),
+        asset("/project-imgs/chatbot2.webp"),
+      ],
       coverStyle: "object-cover object-center",
     },
   ],
@@ -59,14 +63,14 @@ export const projects = {
       stack: "Flutter, Laravel, MySQL",
       link: "https://github.com/Asyra20/JBAG-Jual-Beli-Akun-Game",
       images: [
-        "/project-imgs/jbag1.webp",
-        "/project-imgs/jbag2.webp",
-        "/project-imgs/jbag3.webp",
-        "/project-imgs/jbag4.webp",
-        "/project-imgs/jbag5.webp",
+        asset("/project-imgs/jbag1.webp"),
+        asset("/project-imgs/jbag2.webp"),
+        asset("/project-imgs/jbag3.webp"),
+        asset("/project-imgs/jbag4.webp"),
+        asset("/project-imgs/jbag5.webp"),
       ],
       coverStyle: "object-cover object-center",
-      org: { name: "Ndaweg Team"},
+      org: { name: "Ndaweg Team" },
     },
     {
       title: "SMEGA MART",
@@ -75,12 +79,12 @@ export const projects = {
       stack: "Laravel, TailwindCSS, Flowbite, MySQL, Cloudinary",
       link: "https://github.com/softdevid/smega-mart",
       images: [
-        "/project-imgs/smegamart1.webp",
-        "/project-imgs/smegamart2.webp",
-        "/project-imgs/smegamart3.webp",
+        asset("/project-imgs/smegamart1.webp"),
+        asset("/project-imgs/smegamart2.webp"),
+        asset("/project-imgs/smegamart3.webp"),
       ],
       coverStyle: "object-cover object-top",
-      org: { name: "SoftDev", link: "https://github.com/softdevid" }
+      org: { name: "SoftDev", link: "https://github.com/softdevid" },
     },
     {
       title: "BIMA HELM",
@@ -89,12 +93,12 @@ export const projects = {
       stack: "Laravel, MySQL, Cloudinary",
       link: "https://github.com/softdevid/bima-helm",
       images: [
-        "/project-imgs/bimahelm1.webp",
-        "/project-imgs/bimahelm2.webp",
-        "/project-imgs/bimahelm3.webp",
+        asset("/project-imgs/bimahelm1.webp"),
+        asset("/project-imgs/bimahelm2.webp"),
+        asset("/project-imgs/bimahelm3.webp"),
       ],
       coverStyle: "object-cover object-top",
-      org: { name: "SoftDev", link: "https://github.com/softdevid" }
+      org: { name: "SoftDev", link: "https://github.com/softdevid" },
     },
   ],
 };

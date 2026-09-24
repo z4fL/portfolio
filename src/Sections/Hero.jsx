@@ -2,6 +2,7 @@ import { useState } from "react";
 import CTAButton from "../Components/CTAButton";
 import HeroSlider from "../Components/HeroSlider";
 import PdfPreviewModal from "../Components/PdfPreviewModal";
+import { asset } from "../lib/asset";
 import { socialLinks } from "../socialLinks";
 
 const linkClass =
@@ -16,7 +17,7 @@ const Hero = () => {
         <div className="md:pt-10 lg:pt-20 flex items-center justify-between gap-10 lg:gap-16">
           <div className="flex flex-col">
             <img
-              src="/logo.webp"
+              src={asset("/logo.webp")}
               alt="Logo"
               className="h-auto w-12 mb-4 md:hidden"
             />
@@ -67,7 +68,7 @@ const Hero = () => {
         key="/cv/dzaky-fadli-firmansyah-cv.pdf"
         isOpen={isCvPreviewOpen}
         onClose={() => setIsCvPreviewOpen(false)}
-        fileUrl="/cv/dzaky-fadli-firmansyah-cv.pdf"
+        fileUrl={asset("/cv/dzaky-fadli-firmansyah-cv.pdf")}
       />
     </>
   );

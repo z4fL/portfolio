@@ -1,8 +1,10 @@
+import { asset } from "../lib/asset";
+
 const links = [
   {
     href: "https://enka.network/hsr/800735792",
     text: "HSR",
-    icon: "/assets/game/hsr-icon.webp",
+    icon: asset("/assets/game/hsr-icon.webp"),
   },
 ];
 

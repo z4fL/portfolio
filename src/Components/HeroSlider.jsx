@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useRef, useState } from "react";
+import { asset } from "../lib/asset";
 import TerminalContent from "./TerminalContent";
 import WindowFrame from "./WindowFrame";
 
@@ -23,7 +24,7 @@ const slides = [
     filename: "logo.png",
     content: (
       <div className="w-full h-full flex items-center justify-center p-2">
-        <img src="/logo.webp" alt="Logo" className="max-h-48 w-auto" />
+        <img src={asset("/logo.webp")} alt="Logo" className="max-h-48 w-auto" />
       </div>
     ),
   }

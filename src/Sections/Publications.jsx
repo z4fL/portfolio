@@ -2,6 +2,7 @@ import { useState } from "react";
 import { FiDownload, FiExternalLink, FiFileText } from "react-icons/fi";
 import PdfPreviewModal from "../Components/PdfPreviewModal";
 import CTAButton from "../Components/CTAButton";
+import { asset } from "../lib/asset";
 
 const publication = {
   id: "match-outcome-prediction-msc2025",
@@ -11,8 +12,10 @@ const publication = {
   issue: "Vol. 9, No. 6 · December 2025 · pp. 3892–3903",
   authors: "Dzaky Fadli Firmansyah · Adam Prayogo Kuncoro · Riyanto",
   methods: ["Random Forest", "XGBoost", "Machine Learning", "Mobile Legends"],
-  fileUrlpdf: "/publications/dzaky-msc-2025-match-outcome-prediction.pdf",
-  fileUrlmd: "/publications/dzaky-msc-2025-match-outcome-prediction.md",
+  fileUrlpdf: asset(
+    "/publications/dzaky-msc-2025-match-outcome-prediction.pdf",
+  ),
+  fileUrlmd: asset("/publications/dzaky-msc-2025-match-outcome-prediction.md"),
   doiUrl: "https://doi.org/10.30871/jaic.v9i6.11658",
 };
 
