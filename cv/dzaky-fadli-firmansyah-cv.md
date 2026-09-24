@@ -34,9 +34,9 @@ Internship
 
 ## EDUCATION
 
-### Universitas Amikom Purwokerto, Banyumas | Sep 2022 – Apr 2026
+### Universitas Amikom Purwokerto, Banyumas | Sep 2022 – Feb 2026
 
-Bachelor of Computer Science (BCS / S.Kom.), Informatics Engineering
+Bachelor of Computer (BC / S.Kom.), Informatics
 
 GPA 3.79 / 4.00, Cumlaude
 
