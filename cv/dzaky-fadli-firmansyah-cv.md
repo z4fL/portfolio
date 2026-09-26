@@ -6,7 +6,7 @@ Purbalingga Regency | [zaaaafl654@gmail.com](mailto:zaaaafl654@gmail.com)
 
 ## SUMMARY
 
-Fullstack Developer specializing in Backend Development, experienced in using Laravel, Golang, and ReactJS to develop REST APIs and data-driven systems. Lead author of a Sinta 3 accredited journal publication on applying Random Forest and XGBoost to esports match outcome prediction. Experienced in integrating payment gateways such as Midtrans and Xendit, as well as Hugging Face AI models, into an energy recommendation chatbot project, with a focus on building scalable and production-ready backend systems.
+Fullstack Developer specializing in Backend Development, experienced in using Laravel, Golang, and ReactJS to develop REST APIs and data-driven systems. Lead author of a Sinta 3 accredited journal publication on applying Random Forest and XGBoost to esports match outcome prediction. Experienced in integrating payment gateways such as Midtrans and Xendit, as well as Hugging Face AI models, into an energy recommendation chatbot project, with a focus on building scalable and maintainable backend systems.
 
 ## EXPERIENCE
 
